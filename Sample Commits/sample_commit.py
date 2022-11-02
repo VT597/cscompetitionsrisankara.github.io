@@ -38,4 +38,4 @@ while turns>0:
             wrong+=1
     print(" \n")
 else:
-  print("u lost rip")
+  print("Sorry, you lost...")

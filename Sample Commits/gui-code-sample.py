@@ -1,3 +1,5 @@
+#THERE IS STILL AN ERROR, HENCE CODE WON'T WORK PROPERLY, SO WE'LL JUST USE THIS CODE FOR REFERENCE
+
 import pygame, sys
 from pygame.locals import *
 import time

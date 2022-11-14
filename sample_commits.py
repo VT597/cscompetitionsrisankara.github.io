@@ -1,41 +1,38 @@
 import random
-
-words=['python','java','syntax','coding','programming']
-turns=7
-word= random.choice(words)
-guesses= ''
-a=[]
-for i in word:
-    a.append(i)
-a=[*set(a)]
-
-while turns>0:
-    guess=input("Enter the letter: ")
-
-    if guess in word:
-        print("Correct! The letter ", guess,"is in the word. There is one or more letters in the word left.")
+print("\t \t \t MEAN YOUR WORDS!")
+word_list=["PINEY","FANFARE","PARKOUR","LAPTOP"]
+random_word=random.choice(word_list)
+blank="_ "
+length=len(random_word)
+print("Rules:")
+print("1.You will be provided with meanings of various words which connect together to form one whole meanining full word")
+print("2.You can either guess the whole word, or you can guess one segment according to the hint given")
+print("3.You will have a total of 5 tries")
+print("4.Only full guess of each words are allowed. Partial guesses will be taken as wrong guess only")
+for i in range(5):
+  print(blank*length)
+  if(random_word=="PINEY"):
+    print("Hint 1:A mathematical expression/constant")
+    print("Hint 2:The first 3 letters of a famous Brazilian footballer")
+    guess=int(input("Enter your guess:"))
+    if(guess=="PI"):
+      blank="PI"+blank*(length)-3
+      #PLEASE EDIT THE BLANK PART, IDK HOW TO SWITCH UNDERSCORES TO TEXT
+      print("Great, you've figured out the first hint")
+    elif(guess=="NEY"):
+      blank=
+      #EDIT HERE
+      print("Great, you've figured out the second hint")
+    elif(guess=="PINEY"):
+      print("Congrats!You've figured out the word!")
+      break
     else:
-        turns-=1
-        print("Incorrect! The letter", guess,"is not in the word. You have",turns,"turn(s) left to find the word.")
+      print("Wrong guess, try again")
+  if(random_word=="FANFARE"):
+    print("Hint 1:A supporter of someone/something")
+    print("Hint 2:Money paid for the journey on a public transport")
+    
+    
+      
+      
 
-    guesses+=guess
-    wrong=0
-    c=0
-    for b in guesses :
-        if b in a:
-            c=c+1
-    if c== len(a):
-        print("you won, contrats!! ")
-        turns=0
-
-
-
-    for letter in word:
-        if letter in guesses:
-            print(letter, end=' ')
-        else:
-            print("_", end=' ')
-            wrong+=1
-    print(" \n")
-else:
-  print("u lost rip")

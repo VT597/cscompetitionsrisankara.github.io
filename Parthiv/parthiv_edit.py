@@ -8,7 +8,7 @@ blank="_ "
 a=random.choice(word_list)
 length=len(a)
 print("Rules:")
-guess=""
+guess=[]
 c=a[0]
 print(a)
 print("\t 1.You will be provided with meanings of various words which connect together to form one whole meanining full word")
@@ -29,26 +29,37 @@ for i in range(5):
     if (x[y]==a[1] and x[s]==a[2]):
         print("you win ")
         break
-    elif x[y]==a[1]:
-        print("Hint 1 correct but 2 wrong")
-        for j in a[1]:
-          print(j,end=" ")
-        print(blank*len(a[2]))
+    elif x[y]==a[1] and x[y] not in guess:
+        print("Hint 1 correct but Hint 2 wrong")
+        guess+=x[y]
         o=1
-    elif x[s]==a[2] or x[f]==a[2]:
-        print("Hint 2 corrcet but 1 is wrong")
-        print(blank*len(a[1]),end=" ")
-        for j in a[2]:
-          print(j,end=" ")
-        print()
+    elif (x[s]==a[2] or x[f]==a[2]) and (x[s] not in guess or x[f] not in guess):
+        print("Hint 2 correct but Hint 1 is wrong")
+        if x[s]==a[2] :
+            guess.append()
+        else:
+            guess+=x[f]
         p=1
-    else:    
-    if  o==1 and p==1:
-        for j in a[0]:
-          print(j,end=" ")
-        print()  
-        print("you win ")
-        break
-          
+    else:
+        print("Your guess was wrong")
+    if  o==1: 
+        if p==1:
+            for j in a[0]:
+                print(j,end=" ")
+            print()  
+            print("Congrats! You win! ")
+            break
+        else:
+            for j in a[1]:
+                print(j,end=" ")
+            print(blank*len(a[2]))
+    else:
+        if p==1:
+          print(blank*len(a[1]),end=" ")
+          for j in a[2]:
+                print(j,end=" ")
+          print()
+        else:
+            print(blank*len(a[0]))
 else:
-    print("U lOSE")
+    print("You Lost")

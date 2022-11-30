@@ -8,9 +8,8 @@ blank="_ "
 a=random.choice(word_list)
 length=len(a)
 print("Rules:")
-guess=[]
+guess=""
 c=a[0]
-print(a)
 print("\t 1.You will be provided with meanings of various words which connect together to form one whole meanining full word")
 print("\t 2.You can either guess the whole word, or you can guess one segment according to the hint given")
 print("\t 3.You will have a total of 5 tries")
@@ -27,7 +26,7 @@ for i in range(5):
     y,s=slice(len(a[1])),slice(len(a[1]),len(a[0]))
     f=slice(0,len(a[2]))
     if (x[y]==a[1] and x[s]==a[2]):
-        print("you win ")
+        print("Congrats! You win! ",i+1,"number of guess(es)")
         break
     elif x[y]==a[1] and x[y] not in guess:
         print("Hint 1 correct but Hint 2 wrong")
@@ -36,7 +35,7 @@ for i in range(5):
     elif (x[s]==a[2] or x[f]==a[2]) and (x[s] not in guess or x[f] not in guess):
         print("Hint 2 correct but Hint 1 is wrong")
         if x[s]==a[2] :
-            guess.append()
+            guess+=x[s]
         else:
             guess+=x[f]
         p=1
@@ -47,7 +46,7 @@ for i in range(5):
             for j in a[0]:
                 print(j,end=" ")
             print()  
-            print("Congrats! You win! ")
+            print("Congrats! You win! ",i+1,"number of guess(es)")
             break
         else:
             for j in a[1]:

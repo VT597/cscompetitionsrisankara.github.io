@@ -1,6 +1,9 @@
 import random
 print("\t \t \t MEAN YOUR WORDS!")
-word_list=["PINEY","FANFARE","PARKOUR","LAPTOP"]
+word_list=[["PINEY","PI","NEY","A mathematical expression/constant","The first 3 letters of a famous Brazilian footballer"],
+           ["FANFARE","FAN","FARE","A supporter of someone/something","Money paid for the journey on a public transport"]
+           ["PARKOUR","PARK","OUR","an open area in a town, often with grass or trees, where people can go to walk, play and so on","of or belonging to us"]
+           ["LAPTOP","LAP","TOP","one journey around a running track","the highest part or point of something"]]
 random_word=random.choice(word_list)
 blank="_ "
 length=len(random_word)
@@ -35,4 +38,5 @@ for i in range(5):
     
       
       
+
 

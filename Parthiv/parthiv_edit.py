@@ -23,7 +23,8 @@ for i in range(5):
     if i==0:
         print("_"*len(c))
         
-    x=input("Enter your guess:")
+    t=input("Enter your guess:")
+    x=t.upper()
     y,s=slice(len(a[1])),slice(len(a[1]),len(a[0]))
     f=slice(len(a[1])-len(a[0]))
     print(x[y])
@@ -33,7 +34,6 @@ for i in range(5):
         print("you win ")
         break
     elif x[y]==a[1]:
-        print(a[1],blank*(len(a[2])))
-        
+        print(a[1],blank*(len(a[2])))    
     elif x[s]==a[2] or x[y]==a[2]:
         print(blank*(len(a[1])),a[2])

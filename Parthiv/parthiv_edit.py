@@ -2,8 +2,8 @@ import random
 print("\t \t \t MEAN YOUR WORDS!")
 word_list=[["PINEY","PI","NEY","A mathematical expression/constant","The first 3 letters of a famous Brazilian footballer"],
            ["FANFARE","FAN","FARE","A supporter of someone/something","Money paid for the journey on a public transport"],
-           ["PARKOUR","PARK","OUR","an open area in a town, often with grass or trees, where people can go to walk, play and so on","of or belonging to us"],
-           ["LAPTOP","LAP","TOP","one journey around a running track","the highest part or point of something"]]
+           ["PARKOUR","PARK","OUR","An open area in a town, often with grass or trees, where people can go to walk, play and so on","Of or belonging to us"],
+           ["LAPTOP","LAP","TOP","One journey around a running track","The highest part or point of something"]]
 blank="_ "
 a=random.choice(word_list)
 length=len(a)
@@ -26,7 +26,7 @@ for i in range(5):
     y,s=slice(len(a[1])),slice(len(a[1]),len(a[0]))
     f=slice(0,len(a[2]))
     if (x[y]==a[1] and x[s]==a[2]):
-        print("Congrats! You win! ",i+1,"number of guess(es)")
+        print("Congrats! You win! You finished the game with",i+1,"guess(es)")
         break
     elif x[y]==a[1] and x[y] not in guess:
         print("Hint 1 correct but Hint 2 wrong")
@@ -46,7 +46,7 @@ for i in range(5):
             for j in a[0]:
                 print(j,end=" ")
             print()  
-            print("Congrats! You win! ",i+1,"number of guess(es)")
+            print("Congrats! You win! You finished the game with",i+1,"guess(es)")
             break
         else:
             for j in a[1]:
